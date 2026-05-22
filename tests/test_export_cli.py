@@ -2,7 +2,7 @@ import json
 import sqlite3
 from pathlib import Path
 
-from gdm_opf.export_cli import main
+from fgc_flow.export_cli import main
 
 
 def test_export_cli_writes_all_runs(tmp_path):

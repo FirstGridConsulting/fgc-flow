@@ -67,7 +67,7 @@ Export a single LinDistFlow result. Returns the `run_id`.
 ## Example
 
 ```python
-from gdm_opf import (
+from fgc_flow import (
     optimize_ac_power_flow_from_components,
     solve_dc_opf_from_components,
     solve_lindistflow,

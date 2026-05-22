@@ -71,13 +71,13 @@ In GitHub Actions, MCP tests are enforced by the dedicated `mcp-test` job in `.g
 After installation, verify the CLI is available:
 
 ```bash
-gdm-opf --help
+fgc-flow --help
 ```
 
 You should see:
 
 ```
-Usage: gdm-opf [OPTIONS] COMMAND [ARGS]...
+Usage: fgc-flow [OPTIONS] COMMAND [ARGS]...
 
  GDM-OPF — Power flow & optimal power flow for distribution systems
 
@@ -92,6 +92,6 @@ Usage: gdm-opf [OPTIONS] COMMAND [ARGS]...
 Or verify in Python:
 
 ```python
-import gdm_opf
-print(dir(gdm_opf))
+import fgc_flow
+print(dir(fgc_flow))
 ```

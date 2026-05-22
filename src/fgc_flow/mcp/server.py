@@ -1,4 +1,4 @@
-"""MCP server for GDM-OPF solver operations."""
+"""MCP server for FGC-Flow solver operations."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import TextContent, Tool
 
-from gdm_opf import (
+from fgc_flow import (
     build_lindistflow_net_injections_from_components,
     calculate_ybus,
     export_all_results_to_sqlite,
@@ -23,13 +23,13 @@ from gdm_opf import (
     solve_dc_opf_from_components,
     solve_lindistflow,
 )
-import gdm_opf as gdm_opf_api
-from gdm_opf.mcp import __version__
+import fgc_flow as fgc_flow_api
+from fgc_flow.mcp import __version__
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("gdm_opf_mcp")
+logger = logging.getLogger("fgc_flow_mcp")
 
-app = Server("gdm-opf-mcp")
+app = Server("fgc-flow-mcp")
 
 
 def _find_docs_root() -> Path:
@@ -85,14 +85,14 @@ def _read_text_file(path: Path) -> str:
 
 
 def _list_public_api_symbols() -> list[str]:
-    symbols = getattr(gdm_opf_api, "__all__", [])
+    symbols = getattr(fgc_flow_api, "__all__", [])
     return sorted(str(name) for name in symbols)
 
 
 def _api_reference_for_symbol(symbol_name: str) -> dict[str, Any]:
-    if not hasattr(gdm_opf_api, symbol_name):
+    if not hasattr(fgc_flow_api, symbol_name):
         raise ValueError(f"Unknown public API symbol: {symbol_name}")
-    symbol = getattr(gdm_opf_api, symbol_name)
+    symbol = getattr(fgc_flow_api, symbol_name)
     signature = None
     if callable(symbol):
         try:
@@ -251,8 +251,8 @@ def _serialize_lindistflow_result(result: Any, include_details: bool) -> dict[st
 
 
 @app.list_tools()
-async def list_tools() -> list[Tool]:
-    """List available GDM-OPF MCP tools."""
+    async def list_tools() -> list[Tool]:
+        """List available FGC-Flow MCP tools."""
     return [
         # Solver and matrix tools
         Tool(
@@ -415,7 +415,7 @@ async def list_tools() -> list[Tool]:
         # Documentation and knowledge tools
         Tool(
             name="list_opf_documentation",
-            description="List available GDM-OPF documentation files (docs/*.md, docs/*.ipynb).",
+            description="List available FGC-Flow documentation files (docs/*.md, docs/*.ipynb).",
             inputSchema={
                 "type": "object",
                 "properties": {},
@@ -423,7 +423,7 @@ async def list_tools() -> list[Tool]:
         ),
         Tool(
             name="search_opf_documentation",
-            description="Search GDM-OPF documentation and return relevant snippets.",
+            description="Search FGC-Flow documentation and return relevant snippets.",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -466,7 +466,7 @@ async def list_tools() -> list[Tool]:
         ),
         Tool(
             name="list_opf_api_symbols",
-            description="List public API symbols exposed by gdm_opf.__all__.",
+            description="List public API symbols exposed by fgc_flow.__all__.",
             inputSchema={
                 "type": "object",
                 "properties": {},
@@ -474,7 +474,7 @@ async def list_tools() -> list[Tool]:
         ),
         Tool(
             name="get_opf_api_reference",
-            description="Get module, signature, and docstring for a public GDM-OPF API symbol.",
+            description="Get module, signature, and docstring for a public FGC-Flow API symbol.",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -748,9 +748,9 @@ async def _handle_get_opf_api_reference(args: dict[str, Any]) -> dict[str, Any]:
 def _run_server(
     log_level: Annotated[str, typer.Option(help="Logging level")] = "INFO",
 ) -> None:
-    """Start the GDM-OPF MCP server over stdio."""
-    logging.getLogger("gdm_opf_mcp").setLevel(log_level.upper())
-    logger.info("Starting GDM-OPF MCP Server v%s", __version__)
+    """Start the FGC-Flow MCP server over stdio."""
+    logging.getLogger("fgc_flow_mcp").setLevel(log_level.upper())
+    logger.info("Starting FGC-Flow MCP Server v%s", __version__)
 
     import asyncio
 

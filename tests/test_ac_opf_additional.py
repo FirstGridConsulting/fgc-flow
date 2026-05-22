@@ -5,7 +5,7 @@ import pytest
 
 from gdm.distribution.enums import Phase
 
-from gdm_opf import ac_opf as ac
+from fgc_flow import ac_opf as ac
 
 sp = pytest.importorskip("scipy.sparse")
 

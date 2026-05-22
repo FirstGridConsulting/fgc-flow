@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from gdm.distribution import DistributionSystem
-from gdm_opf import solve_lindistflow
+from fgc_flow import solve_lindistflow
 
 
 def main() -> None:

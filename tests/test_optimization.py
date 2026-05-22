@@ -4,7 +4,7 @@ import pytest
 from gdm.distribution import DistributionSystem
 from gdm.distribution.components import MatrixImpedanceBranch
 
-from gdm_opf import optimize_ac_power_flow
+from fgc_flow import optimize_ac_power_flow
 
 
 pytest.importorskip("scipy")

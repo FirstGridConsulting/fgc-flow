@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="docs/logo.svg" alt="GDM-OPF logo" width="320">
-</p>
+  <img src="docs/logo.svg" alt="FGC-Flow logo" width="320">
 
-# gdm-opf
+# fgc-flow
 
 [![CI](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/ci.yml/badge.svg)](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/ci.yml) • [![Docs](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/docs.yml/badge.svg)](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/docs.yml) • [![Publish](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/publish.yml/badge.svg)](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/publish.yml) •[![codecov](https://codecov.io/github/NLR-Distribution-Suite/GDM_OPF/graph/badge.svg?token=v3LK0n3TUL)](https://codecov.io/github/NLR-Distribution-Suite/GDM_OPF) • ![MCP Server](https://img.shields.io/badge/MCP_Server-enabled-brightgreen) • ![MCP Tools](https://img.shields.io/badge/MCP_Tools-11-blue) • [![GitHub issues](https://img.shields.io/github/issues/NLR-Distribution-Suite/GDM_OPF)](https://github.com/NLR-Distribution-Suite/GDM_OPF/issues)
 
@@ -42,7 +41,7 @@ If you want to run the MCP server:
 
 ```bash
 pip install -e '.[mcp,optimization]'
-gdm-opf-mcp-server
+    fgc-flow-mcp-server
 ```
 
 ## Development checks
@@ -100,7 +99,7 @@ python examples/run_lindistflow_example.py
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import calculate_ybus
+from fgc_flow import calculate_ybus
 
 system = DistributionSystem.from_json("path/to/system.json")
 result = calculate_ybus(system, include_shunt=False)
@@ -115,7 +114,7 @@ labels = result.index_to_label
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import optimize_ac_power_flow
+from fgc_flow import optimize_ac_power_flow
 
 system = DistributionSystem.from_json("path/to/system.json")
 
@@ -139,7 +138,7 @@ you can build nodal injections automatically:
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import optimize_ac_power_flow_from_components
+from fgc_flow import optimize_ac_power_flow_from_components
 
 system = DistributionSystem.from_json("path/to/system.json")
 
@@ -164,11 +163,11 @@ Notes:
 
 ## DC OPF module
 
-`gdm-opf` also includes a separate DC OPF module:
+`fgc-flow` also includes a separate DC OPF module:
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import solve_dc_opf_from_components
+from fgc_flow import solve_dc_opf_from_components
 
 system = DistributionSystem.from_json("path/to/system.json")
 
@@ -185,11 +184,11 @@ print(result.generator_dispatch_w)
 
 ## LinDistFlow module
 
-`gdm-opf` includes a separate radial LinDistFlow approximation module:
+`fgc-flow` includes a separate radial LinDistFlow approximation module:
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import solve_lindistflow
+from fgc_flow import solve_lindistflow
 
 system = DistributionSystem.from_json("path/to/system.json")
 
@@ -205,7 +204,7 @@ print(result.p_flow_w)      # {(branch_name, phase): active_flow_w}
 You can export results from AC OPF, DC OPF, and LinDistFlow into one SQLite database:
 
 ```python
-from gdm_opf import export_all_results_to_sqlite
+from fgc_flow import export_all_results_to_sqlite
 
 run_ids = export_all_results_to_sqlite(
   "results.sqlite",
@@ -228,13 +227,13 @@ Or export each result type separately:
 Use the CLI to load saved result JSON files and export to SQLite in one command:
 
 ```bash
-gdm-opf-export --db results.sqlite --ac-json ac_result.json --dc-json dc_result.json --lindistflow-json ldf_result.json
+fgc-flow-export --db results.sqlite --ac-json ac_result.json --dc-json dc_result.json --lindistflow-json ldf_result.json
 ```
 
 Generate starter JSON templates:
 
 ```bash
-gdm-opf-export --write-templates ./templates
+fgc-flow-export --write-templates ./templates
 ```
 
 This creates:

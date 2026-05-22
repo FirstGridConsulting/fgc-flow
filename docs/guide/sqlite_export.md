@@ -7,13 +7,13 @@ GDM-OPF can export solver results to a SQLite database for downstream analysis, 
 ### Via CLI
 
 ```bash
-gdm-opf export examples/models/p5r.json --db results.db
+fgc-flow export examples/models/p5r.json --db results.db
 ```
 
 ### Via Python
 
 ```python
-from gdm_opf import (
+from fgc_flow import (
     optimize_ac_power_flow_from_components,
     solve_dc_opf_from_components,
     solve_lindistflow,

@@ -17,7 +17,7 @@ Dataclass representing a generator in the DC OPF formulation.
 **Example:**
 
 ```python
-from gdm_opf import DCGenerator
+from fgc_flow import DCGenerator
 
 solar = DCGenerator(
     name="solar_pv_1",

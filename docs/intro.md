@@ -51,7 +51,7 @@ DistributionSystem (GDM JSON)
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import optimize_ac_power_flow_from_components
+from fgc_flow import optimize_ac_power_flow_from_components
 
 system = DistributionSystem.from_json("model.json")
 result = optimize_ac_power_flow_from_components(system)

@@ -3,9 +3,9 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gdm-opf"
+name = "fgc-flow"
 version = "0.1.0"
-description = "Power flow utilities for grid-data-models distribution systems"
+description = "Power flow utilities for distribution systems"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
@@ -20,9 +20,9 @@ dependencies = [
 ]
 
 [project.scripts]
-gdm-opf = "gdm_opf.cli:main"
-gdm-opf-export = "gdm_opf.export_cli:main"
-gdm-opf-mcp-server = "gdm_opf.mcp.server:main"
+fgc-flow = "fgc_flow.cli:main"
+fgc-flow-export = "fgc_flow.export_cli:main"
+fgc-flow-mcp-server = "fgc_flow.mcp.server:main"
 
 [project.optional-dependencies]
 sparse = ["scipy>=1.10"]

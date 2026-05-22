@@ -3,7 +3,7 @@ import sqlite3
 import numpy as np
 import pytest
 
-from gdm_opf import (
+from fgc_flow import (
     DCOPFResult,
     LinDistFlowResult,
     PowerFlowOptimizationResult,

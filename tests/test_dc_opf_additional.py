@@ -15,8 +15,8 @@ from gdm.distribution.components import (
 )
 from gdm.distribution.enums import Phase
 
-from gdm_opf import dc_opf
-from gdm_opf.dc_opf import DCGenerator
+from fgc_flow import dc_opf
+from fgc_flow.dc_opf import DCGenerator
 
 
 pytest.importorskip("scipy")

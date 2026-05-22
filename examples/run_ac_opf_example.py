@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from gdm.distribution import DistributionSystem
-from gdm_opf import optimize_ac_power_flow_from_components
+from fgc_flow import optimize_ac_power_flow_from_components
 
 
 def main() -> None:

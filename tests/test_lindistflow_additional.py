@@ -15,7 +15,7 @@ from gdm.distribution.components import (
 )
 from gdm.distribution.enums import Phase, VoltageTypes
 
-from gdm_opf import lindistflow as ldf
+from fgc_flow import lindistflow as ldf
 
 
 class _Q:

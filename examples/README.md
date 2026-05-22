@@ -1,6 +1,6 @@
 # Examples
 
-This folder contains runnable examples for all three optimization flavors in `gdm-opf`.
+This folder contains runnable examples for all three optimization flavors in `fgc-flow`.
 
 ## Demo model
 

@@ -1,4 +1,4 @@
-"""GDM OPF utilities."""
+"""FGC Flow utilities."""
 
 from .dc_opf import (
     DCGenerator,

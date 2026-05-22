@@ -49,7 +49,7 @@ Build the bus admittance matrix from all branches and transformers in the system
 
 ```python
 from gdm.distribution import DistributionSystem
-from gdm_opf import calculate_ybus
+from fgc_flow import calculate_ybus
 
 system = DistributionSystem.from_json("model.json")
 result = calculate_ybus(system, sparse=True)

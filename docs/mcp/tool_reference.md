@@ -1,6 +1,6 @@
 # MCP Tool Reference
 
-This page documents the tools exposed by `gdm-opf-mcp-server`.
+This page documents the tools exposed by `fgc-flow-mcp-server`.
 
 ## Solver And Matrix Tools
 
@@ -117,7 +117,7 @@ Key inputs:
 - `max_lines` (default `160`)
 
 ## `list_opf_api_symbols`
-List public symbols exported by `gdm_opf.__all__`.
+List public symbols exported by `fgc_flow.__all__`.
 
 ## `get_opf_api_reference`
 Get module, signature, and docstring for a public API symbol.

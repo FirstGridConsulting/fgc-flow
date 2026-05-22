@@ -5,8 +5,8 @@ from gdm.distribution import DistributionSystem
 from gdm.distribution.enums import Phase, VoltageTypes
 from gdm.distribution.components import MatrixImpedanceBranch, MatrixImpedanceSwitch
 
-from gdm_opf import calculate_ybus
-from gdm_opf import ybus as ybus_mod
+from fgc_flow import calculate_ybus
+from fgc_flow import ybus as ybus_mod
 
 
 def test_calculate_ybus_matrix_branch():

@@ -72,7 +72,7 @@ idx = result.label_to_index[("bus_1", "A")]  # e.g., 0
 ### Basic Y-Bus
 
 ```python
-from gdm_opf import calculate_ybus
+from fgc_flow import calculate_ybus
 
 result = calculate_ybus(system)
 print(f"Shape: {result.ybus.shape}")

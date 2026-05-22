@@ -56,7 +56,7 @@ The solver supports multi-phase slack bus operation. When using `optimize_ac_pow
 ### High-Level (Recommended)
 
 ```python
-from gdm_opf import optimize_ac_power_flow_from_components
+from fgc_flow import optimize_ac_power_flow_from_components
 
 result = optimize_ac_power_flow_from_components(
     system,
@@ -74,7 +74,7 @@ print(f"Iterations: {result.iterations}")
 ### Low-Level
 
 ```python
-from gdm_opf import optimize_ac_power_flow
+from fgc_flow import optimize_ac_power_flow
 
 result = optimize_ac_power_flow(
     system,

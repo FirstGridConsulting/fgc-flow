@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from gdm_opf import export_cli
+from fgc_flow import export_cli
 
 
 def test_parse_helpers_accept_list_and_dict_forms():

@@ -8,11 +8,11 @@ import pytest
 import typer
 import numpy as np
 
-import gdm_opf.cli as cli
+import fgc_flow.cli as cli
 from gdm.distribution import DistributionSystem
 from gdm.distribution.enums import Phase
 from gdm.distribution.components.base.distribution_branch_base import DistributionBranchBase
-from gdm_opf import calculate_ybus
+from fgc_flow import calculate_ybus
 
 
 class _DummyStatus:
@@ -111,7 +111,7 @@ def test_run_dc_aggregates_dispatch(monkeypatch):
             }
         )
 
-    monkeypatch.setattr("gdm_opf.dc_opf.solve_dc_opf_from_components", _fake_solve)
+    monkeypatch.setattr("fgc_flow.dc_opf.solve_dc_opf_from_components", _fake_solve)
 
     out = cli._run_dc(system=object())
     assert out["success"] is True
@@ -126,7 +126,7 @@ def test_run_ldf_handles_empty_voltages(monkeypatch):
     def _fake_solve(*args, **kwargs):
         return _FakeLDFResult(p_net_w={"a": 1.0}, q_net_var={"a": 2.0}, voltage_v={})
 
-    monkeypatch.setattr("gdm_opf.lindistflow.solve_lindistflow", _fake_solve)
+    monkeypatch.setattr("fgc_flow.lindistflow.solve_lindistflow", _fake_solve)
 
     out = cli._run_ldf(system=object())
     assert out["success"] is True
@@ -309,7 +309,7 @@ def test_export_passes_selected_solver_results(monkeypatch, tmp_path):
         captured["ldf_loading"] = lindistflow_loading_limits_va
 
     monkeypatch.setattr(
-        "gdm_opf.sqlite_export.export_all_results_to_sqlite",
+        "fgc_flow.sqlite_export.export_all_results_to_sqlite",
         _fake_export_all_results_to_sqlite,
     )
 
@@ -381,7 +381,7 @@ def test_export_includes_dc_when_selected(monkeypatch, tmp_path):
         captured["ldf_loading"] = lindistflow_loading_limits_va
 
     monkeypatch.setattr(
-        "gdm_opf.sqlite_export.export_all_results_to_sqlite",
+        "fgc_flow.sqlite_export.export_all_results_to_sqlite",
         _fake_export_all_results_to_sqlite,
     )
 
@@ -715,7 +715,7 @@ def test_run_ac_computes_source_and_voltage_stats(monkeypatch):
         voltage = np.array([2 + 0j, 1 + 0j], dtype=np.complex128)
 
     monkeypatch.setattr(
-        "gdm_opf.ac_opf.optimize_ac_power_flow_from_components",
+        "fgc_flow.ac_opf.optimize_ac_power_flow_from_components",
         lambda *_a, **_k: _ACRes(),
     )
 
@@ -1290,7 +1290,7 @@ def test_export_invokes_ac_dc_branch_helpers_when_results_include_expected_field
     def _fake_export_all_results_to_sqlite(**kwargs):
         captured.update(kwargs)
 
-    monkeypatch.setattr("gdm_opf.sqlite_export.export_all_results_to_sqlite", _fake_export_all_results_to_sqlite)
+    monkeypatch.setattr("fgc_flow.sqlite_export.export_all_results_to_sqlite", _fake_export_all_results_to_sqlite)
 
     cli.export(
         model=Path("ignored.json"),

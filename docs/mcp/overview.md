@@ -21,7 +21,7 @@ pip install -e ".[mcp,optimization]"
 ## Run the Server
 
 ```bash
-gdm-opf-mcp-server
+fgc-flow-mcp-server
 ```
 
 The server runs over stdio and is intended for MCP clients (for example, VS Code agent integrations) to start and manage.

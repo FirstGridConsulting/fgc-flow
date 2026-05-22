@@ -8,7 +8,7 @@ import pytest
 
 pytest.importorskip("mcp")
 
-from gdm_opf.mcp import server as mcp_server
+from fgc_flow.mcp import server as mcp_server
 
 
 def test_mcp_list_tools_includes_documentation_tools():
@@ -65,7 +65,7 @@ def test_mcp_api_reference_tools_smoke():
         )
     )
     assert api_ref["symbol"] == "calculate_ybus"
-    assert api_ref["module"].startswith("gdm_opf")
+    assert api_ref["module"].startswith("fgc_flow")
     assert api_ref["signature"] is not None
 
 

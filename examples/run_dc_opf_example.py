@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from gdm.distribution import DistributionSystem
-from gdm_opf import solve_dc_opf_from_components
+from fgc_flow import solve_dc_opf_from_components
 
 
 def main() -> None:

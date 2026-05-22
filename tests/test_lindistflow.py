@@ -7,7 +7,7 @@ from gdm.distribution.components import (
     MatrixImpedanceBranch,
 )
 
-from gdm_opf import build_lindistflow_net_injections_from_components, solve_lindistflow
+from fgc_flow import build_lindistflow_net_injections_from_components, solve_lindistflow
 
 
 def test_build_lindistflow_net_injections_from_components_load_only():

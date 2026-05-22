@@ -30,7 +30,7 @@ Slack nodes serve as the angle reference ($\theta_{slack} = 0$). When a slack no
 Each `DCGenerator` specifies:
 
 ```python
-from gdm_opf import DCGenerator
+from fgc_flow import DCGenerator
 
 gen = DCGenerator(
     name="solar_pv_1",
@@ -48,7 +48,7 @@ gen = DCGenerator(
 ### High-Level (Recommended)
 
 ```python
-from gdm_opf import solve_dc_opf_from_components
+from fgc_flow import solve_dc_opf_from_components
 
 result = solve_dc_opf_from_components(
     system,
@@ -71,7 +71,7 @@ The convenience wrapper automatically:
 ### Low-Level
 
 ```python
-from gdm_opf import DCGenerator, solve_dc_opf
+from fgc_flow import DCGenerator, solve_dc_opf
 
 generators = [
     DCGenerator("solar", ("bus_2", "A"), 0.0, 5000.0, cost_linear=5.0),

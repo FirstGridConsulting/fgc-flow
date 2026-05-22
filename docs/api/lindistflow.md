@@ -73,7 +73,7 @@ Returns `(p_net_w, q_net_var)` from system components.
 **Example:**
 
 ```python
-from gdm_opf import build_lindistflow_net_injections_from_components
+from fgc_flow import build_lindistflow_net_injections_from_components
 
 p_net, q_net = build_lindistflow_net_injections_from_components(
     system,
@@ -84,6 +84,6 @@ p_net, q_net = build_lindistflow_net_injections_from_components(
 # Modify injections
 p_net[("bus_3", "A")] += 1000.0  # Add 1 kW load
 
-from gdm_opf import solve_lindistflow
+from fgc_flow import solve_lindistflow
 result = solve_lindistflow(system, p_net_w=p_net, q_net_var=q_net)
 ```

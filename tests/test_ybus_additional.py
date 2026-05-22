@@ -4,7 +4,7 @@ import numpy as np
 
 from gdm.distribution.enums import Phase, VoltageTypes
 
-from gdm_opf import ybus as ybus_mod
+from fgc_flow import ybus as ybus_mod
 
 
 class _Q:

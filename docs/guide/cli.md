@@ -10,16 +10,16 @@ The CLI is installed automatically with the package:
 pip install -e ".[optimization]"
 ```
 
-The command `gdm-opf` becomes available in your terminal.
+The command `fgc-flow` becomes available in your terminal.
 
 ## Commands
 
-### `gdm-opf info`
+### `fgc-flow info`
 
 Display system topology, component counts, and power summary.
 
 ```bash
-gdm-opf info examples/models/p5r.json
+fgc-flow info examples/models/p5r.json
 ```
 
 **Output includes:**
@@ -28,19 +28,19 @@ gdm-opf info examples/models/p5r.json
 - Total load (P and Q), solar active/rated power, net demand
 - Per-bus details: phases, rated voltage, bus type
 
-### `gdm-opf run`
+### `fgc-flow run`
 
 Run one or more solvers on a distribution system model.
 
 ```bash
 # Run AC OPF only (default)
-gdm-opf run examples/models/p5r.json
+fgc-flow run examples/models/p5r.json
 
 # Run multiple solvers
-gdm-opf run examples/models/p5r.json -s ac -s dc -s ldf
+fgc-flow run examples/models/p5r.json -s ac -s dc -s ldf
 
 # Verbose — show voltage table and dispatch details
-gdm-opf run examples/models/p5r.json -s ac -s dc -v
+fgc-flow run examples/models/p5r.json -s ac -s dc -v
 ```
 
 **Options:**
@@ -49,15 +49,15 @@ gdm-opf run examples/models/p5r.json -s ac -s dc -v
 | `-s`, `--solver` | `ac` | Solver(s) to run: `ac`, `dc`, `ldf` (repeatable) |
 | `-v`, `--verbose` | `false` | Show detailed voltage and dispatch tables |
 
-### `gdm-opf compare`
+### `fgc-flow compare`
 
 Run all three solvers and display a side-by-side comparison.
 
 ```bash
-gdm-opf compare examples/models/p5r.json
+fgc-flow compare examples/models/p5r.json
 
 # Also generate an HTML comparison plot
-gdm-opf compare examples/models/p5r.json -o comparison.html
+fgc-flow compare examples/models/p5r.json -o comparison.html
 ```
 
 The comparison shows:
@@ -72,16 +72,16 @@ The comparison shows:
 |------|---------|-------------|
 | `-o`, `--output` | None | Export comparison to interactive HTML (requires plotly) |
 
-### `gdm-opf export`
+### `fgc-flow export`
 
 Run solvers and export results to a SQLite database.
 
 ```bash
 # Export all solvers
-gdm-opf export examples/models/p5r.json --db results.db
+fgc-flow export examples/models/p5r.json --db results.db
 
 # Export only AC and DC
-gdm-opf export examples/models/p5r.json --db results.db -s ac -s dc
+fgc-flow export examples/models/p5r.json --db results.db -s ac -s dc
 ```
 
 **Options:**
@@ -90,19 +90,19 @@ gdm-opf export examples/models/p5r.json --db results.db -s ac -s dc
 | `--db` | *required* | Path to SQLite database file |
 | `-s`, `--solver` | `ac dc ldf` | Solver(s) to export (repeatable) |
 
-### `gdm-opf report-overvoltage`
+### `fgc-flow report-overvoltage`
 
 Print voltage limit violations from exported AC OPF or LinDistFlow node results.
 
 ```bash
 # Check latest AC run in database
-gdm-opf report-overvoltage --db results.db
+fgc-flow report-overvoltage --db results.db
 
 # Check latest LinDistFlow run
-gdm-opf report-overvoltage --db results.db -s ldf
+fgc-flow report-overvoltage --db results.db -s ldf
 
 # Check a specific run id
-gdm-opf report-overvoltage --db results.db -s ac --run-id ac_123456abcdef
+fgc-flow report-overvoltage --db results.db -s ac --run-id ac_123456abcdef
 ```
 
 **Options:**
@@ -112,7 +112,7 @@ gdm-opf report-overvoltage --db results.db -s ac --run-id ac_123456abcdef
 | `-s`, `--solver` | `ac` | Solver result set: `ac` or `ldf` |
 | `--run-id` | latest run | Specific run id to inspect |
 
-### `gdm-opf report-overload`
+### `fgc-flow report-overload`
 
 Print branch loading violations from exported AC OPF, DC OPF, or LinDistFlow branch results.
 
@@ -120,19 +120,19 @@ Print branch loading violations from exported AC OPF, DC OPF, or LinDistFlow bra
 
 ```bash
 # Check latest LinDistFlow run
-gdm-opf report-overload --db results.db
+fgc-flow report-overload --db results.db
 
 # Check latest AC OPF run
-gdm-opf report-overload --db results.db -s ac
+fgc-flow report-overload --db results.db -s ac
 
 # Check latest DC OPF run
-gdm-opf report-overload --db results.db -s dc
+fgc-flow report-overload --db results.db -s dc
 
 # For DC, optionally print full percentage table instead of ranked severity
-gdm-opf report-overload --db results.db -s dc --no-dc-severity-only
+fgc-flow report-overload --db results.db -s dc --no-dc-severity-only
 
 # Check a specific run id
-gdm-opf report-overload --db results.db --run-id lindistflow_123456abcdef
+fgc-flow report-overload --db results.db --run-id lindistflow_123456abcdef
 ```
 
 **Options:**
@@ -143,16 +143,16 @@ gdm-opf report-overload --db results.db --run-id lindistflow_123456abcdef
 | `--run-id` | latest solver run | Specific run id to inspect |
 | `--dc-severity-only/--no-dc-severity-only` | `true` | For DC reports, show ranked severity instead of percent magnitudes |
 
-### `gdm-opf db-schema`
+### `fgc-flow db-schema`
 
 Print the SQLite table/column schema for a database file.
 
 ```bash
 # Show user tables and columns
-gdm-opf db-schema --db results.db
+fgc-flow db-schema --db results.db
 
 # Include sqlite_* internal tables
-gdm-opf db-schema --db results.db --include-internal
+fgc-flow db-schema --db results.db --include-internal
 ```
 
 **Options:**
@@ -167,24 +167,24 @@ gdm-opf db-schema --db results.db --include-internal
 
 ```bash
 # What's in this model?
-gdm-opf info examples/models/p5r.json
+fgc-flow info examples/models/p5r.json
 
 # Run all solvers and see if they agree
-gdm-opf compare examples/models/p5r.json
+fgc-flow compare examples/models/p5r.json
 ```
 
 ### Full Analysis Pipeline
 
 ```bash
 # 1. Inspect the system
-gdm-opf info examples/models/p5r.json
+fgc-flow info examples/models/p5r.json
 
 # 2. Run solvers with detailed output
-gdm-opf run examples/models/p5r.json -s ac -s dc -s ldf -v
+fgc-flow run examples/models/p5r.json -s ac -s dc -s ldf -v
 
 # 3. Export to database for further analysis
-gdm-opf export examples/models/p5r.json --db analysis.db
+fgc-flow export examples/models/p5r.json --db analysis.db
 
 # 4. Generate comparison plot
-gdm-opf compare examples/models/p5r.json -o comparison.html
+fgc-flow compare examples/models/p5r.json -o comparison.html
 ```

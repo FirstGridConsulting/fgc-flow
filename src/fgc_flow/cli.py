@@ -1,10 +1,10 @@
-"""Modern CLI for GDM-OPF power flow analysis.
+"""Modern CLI for FGC-Flow power flow analysis.
 
 Usage:
-    gdm-opf info   MODEL        Show system topology and component summary
-    gdm-opf run    MODEL        Run one or more OPF solvers
-    gdm-opf compare MODEL       Run all solvers and compare results
-    gdm-opf export MODEL --db   Export solver results to SQLite
+    fgc-flow info   MODEL        Show system topology and component summary
+    fgc-flow run    MODEL        Run one or more OPF solvers
+    fgc-flow compare MODEL       Run all solvers and compare results
+    fgc-flow export MODEL --db   Export solver results to SQLite
 """
 
 from __future__ import annotations
@@ -33,8 +33,8 @@ console = Console()
 err_console = Console(stderr=True)
 
 app = typer.Typer(
-    name="gdm-opf",
-    help="[bold cyan]GDM-OPF[/] — Power flow & optimal power flow for distribution systems",
+    name="fgc-flow",
+    help="[bold cyan]FGC-Flow[/] — Power flow & optimal power flow for distribution systems",
     rich_markup_mode="rich",
     no_args_is_help=True,
     pretty_exceptions_enable=True,
@@ -717,7 +717,7 @@ def info(
     console.print(
         Panel(
             f"[bold]{model.name}[/]\n[dim]{model.resolve()}[/]",
-            title="[bold cyan]⚡ GDM-OPF System Info[/]",
+            title="[bold cyan]⚡ FGC-Flow System Info[/]",
             border_style="cyan",
         )
     )
@@ -1020,7 +1020,7 @@ def report_overvoltage(
 
     if not has_columns:
         err_console.print(
-            "[yellow]This database does not include voltage limit columns. Re-run `gdm-opf export` to add them.[/]"
+            "[yellow]This database does not include voltage limit columns. Re-run `fgc-flow export` to add them.[/]"
         )
         raise typer.Exit(1)
 
@@ -1115,7 +1115,7 @@ def report_overload(
 
     if not has_columns:
         err_console.print(
-            "[yellow]This database does not include loading limit columns. Re-run `gdm-opf export` to add them.[/]"
+            "[yellow]This database does not include loading limit columns. Re-run `fgc-flow export` to add them.[/]"
         )
         raise typer.Exit(1)
 

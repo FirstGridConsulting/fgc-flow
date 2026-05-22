@@ -263,7 +263,7 @@ def _as_sparse_if_requested(ybus: np.ndarray, sparse: bool):
         from scipy.sparse import csr_matrix
     except ModuleNotFoundError as exc:  # pragma: no cover
         raise RuntimeError(
-            "SciPy is required for sparse=True. Install with `pip install gdm-opf[sparse]`."
+            "SciPy is required for sparse=True. Install with `pip install fgc-flow[sparse]`."
         ) from exc
     return csr_matrix(ybus)
 

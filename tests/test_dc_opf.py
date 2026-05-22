@@ -3,7 +3,7 @@ import pytest
 from gdm.distribution import DistributionSystem
 from gdm.distribution.components import DistributionLoad, DistributionSolar, MatrixImpedanceBranch
 
-from gdm_opf import (
+from fgc_flow import (
     DCGenerator,
     build_dc_generators_from_components,
     build_dc_load_profile_from_components,

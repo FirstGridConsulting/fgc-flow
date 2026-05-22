@@ -11,7 +11,7 @@ from gdm.distribution.components import (
 from gdm.distribution.enums import Phase
 from gdm.quantities import ActivePower, ReactivePower, Voltage
 
-from gdm_opf import (
+from fgc_flow import (
     build_nodal_power_specs_from_components,
     build_regulator_voltage_limits_from_components,
     build_regulator_voltage_targets_from_components,

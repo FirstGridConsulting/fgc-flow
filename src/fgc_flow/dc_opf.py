@@ -181,7 +181,7 @@ def solve_dc_opf(
         import scipy.sparse as sp_sparse
     except ModuleNotFoundError as exc:  # pragma: no cover
         raise RuntimeError(
-            "SciPy is required for DC OPF. Install with `pip install gdm-opf[optimization]`."
+            "SciPy is required for DC OPF. Install with `pip install fgc-flow[optimization]`."
         ) from exc
 
     if not generators:

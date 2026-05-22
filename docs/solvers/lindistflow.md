@@ -30,7 +30,7 @@ $$V_j = \frac{V_i}{a} - \frac{r \cdot P + x \cdot Q}{V_i / a}$$
 ### High-Level (Recommended)
 
 ```python
-from gdm_opf import solve_lindistflow
+from fgc_flow import solve_lindistflow
 
 result = solve_lindistflow(system)
 
@@ -45,7 +45,7 @@ print(f"Source P:   {source_p:.1f} W")
 ### With Custom Injections
 
 ```python
-from gdm_opf import (
+from fgc_flow import (
     build_lindistflow_net_injections_from_components,
     solve_lindistflow,
 )
