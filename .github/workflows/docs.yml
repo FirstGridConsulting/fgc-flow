@@ -29,6 +29,8 @@ jobs:
 
       - name: Build docs
         working-directory: docs
+        env:
+          BASE_URL: /fgc-flow
         run: myst build --html
 
       - name: Upload artifact

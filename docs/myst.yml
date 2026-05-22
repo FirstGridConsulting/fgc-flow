@@ -43,7 +43,6 @@ project:
         - file: api/sqlite_export.md
 
 site:
-  base: /fgc-flow/
   options:
     logo: logo.svg
     favicon: favicon.svg
