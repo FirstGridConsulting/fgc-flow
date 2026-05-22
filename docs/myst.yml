@@ -1,11 +1,9 @@
 version: 1
 
 project:
-  title: GDM-OPF
+  title: FGC-Flow
   subtitle: Power Flow & Optimal Power Flow for Distribution Systems
-  authors:
-    - name: NLR Distribution Suite
-  github: NLR-Distribution-Suite/GDM_OPF
+  github: FirstGridConsulting/fgc-flow
   license:
     code: MIT
   keywords:
@@ -45,9 +43,9 @@ project:
         - file: api/sqlite_export.md
 
 site:
+  base: /fgc-flow/
   options:
     logo: logo.svg
     favicon: favicon.svg
-    logo_text: GDM-OPF
     folders: true
   template: book-theme

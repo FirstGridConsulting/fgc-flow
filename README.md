@@ -3,7 +3,7 @@
 
 # fgc-flow
 
-[![CI](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/ci.yml/badge.svg)](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/ci.yml) • [![Docs](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/docs.yml/badge.svg)](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/docs.yml) • [![Publish](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/publish.yml/badge.svg)](https://github.com/NLR-Distribution-Suite/GDM_OPF/actions/workflows/publish.yml) •[![codecov](https://codecov.io/github/NLR-Distribution-Suite/GDM_OPF/graph/badge.svg?token=v3LK0n3TUL)](https://codecov.io/github/NLR-Distribution-Suite/GDM_OPF) • ![MCP Server](https://img.shields.io/badge/MCP_Server-enabled-brightgreen) • ![MCP Tools](https://img.shields.io/badge/MCP_Tools-11-blue) • [![GitHub issues](https://img.shields.io/github/issues/NLR-Distribution-Suite/GDM_OPF)](https://github.com/NLR-Distribution-Suite/GDM_OPF/issues)
+[![CI](https://github.com/FirstGridConsulting/fgc-flow/actions/workflows/ci.yml/badge.svg)](https://github.com/FirstGridConsulting/fgc-flow/actions/workflows/ci.yml) • [![Docs](https://github.com/FirstGridConsulting/fgc-flow/actions/workflows/docs.yml/badge.svg)](https://github.com/FirstGridConsulting/fgc-flow/actions/workflows/docs.yml) • ![MCP Server](https://img.shields.io/badge/MCP_Server-enabled-brightgreen) • ![MCP Tools](https://img.shields.io/badge/MCP_Tools-11-blue) • [![GitHub issues](https://img.shields.io/github/issues/FirstGridConsulting/fgc-flow)](https://github.com/FirstGridConsulting/fgc-flow/issues)
 
 Utilities for OPF and power-flow style preprocessing on top of
 `grid-data-models` distribution systems.

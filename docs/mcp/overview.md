@@ -1,14 +1,14 @@
 # MCP Overview
 
-GDM-OPF includes an MCP (Model Context Protocol) server that exposes OPF and Y-bus workflows as callable tools for MCP-compatible clients.
+FGC-Flow includes an MCP (Model Context Protocol) server that exposes OPF and Y-bus workflows as callable tools for MCP-compatible clients.
 
 ## What It Provides
 
 - Run solver workflows through structured tool calls
 - Access Y-bus metadata for distribution models
 - Export solver results to SQLite
-- Search and read GDM-OPF documentation from MCP clients
-- Inspect public GDM-OPF API symbols and docstrings
+- Search and read FGC-Flow documentation from MCP clients
+- Inspect public FGC-Flow API symbols and docstrings
 
 ## Install
 

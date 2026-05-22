@@ -10,14 +10,14 @@
 Clone the repository and install in editable mode:
 
 ```bash
-git clone https://github.com/NLR-Distribution-Suite/GDM_OPF.git
-cd GDM_OPF
+git clone https://github.com/FirstGridConsulting/fgc-flow.git
+cd fgc-flow
 pip install -e .
 ```
 
 ## Optional Extras
 
-GDM-OPF has optional dependency groups for different use cases:
+FGC-Flow has optional dependency groups for different use cases:
 
 ```bash
 # For AC OPF and DC OPF solvers (requires SciPy)
@@ -79,7 +79,7 @@ You should see:
 ```
 Usage: fgc-flow [OPTIONS] COMMAND [ARGS]...
 
- GDM-OPF — Power flow & optimal power flow for distribution systems
+ FGC-Flow — Power flow & optimal power flow for distribution systems
 
 ╭─ Commands ──────────────────────────────────────────────╮
 │ info      Show system topology and component summary.   │

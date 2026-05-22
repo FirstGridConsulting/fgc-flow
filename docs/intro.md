@@ -1,8 +1,8 @@
-# GDM-OPF
+# FGC-Flow
 
 **Power Flow & Optimal Power Flow for Distribution Systems**
 
-GDM-OPF provides three complementary solvers for analyzing distribution power systems built on [grid-data-models](https://github.com/NLR-Distribution-Suite/grid-data-models):
+FGC-Flow provides three complementary solvers for analyzing distribution power systems built on [grid-data-models](https://github.com/NLR-Distribution-Suite/grid-data-models):
 
 | Solver | Method | Strengths |
 |--------|--------|-----------|

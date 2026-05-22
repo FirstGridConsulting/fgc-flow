@@ -1,6 +1,6 @@
 # SQLite Export
 
-GDM-OPF can export solver results to a SQLite database for downstream analysis, archival, or integration with other tools.
+FGC-Flow can export solver results to a SQLite database for downstream analysis, archival, or integration with other tools.
 
 ## Quick Start
 

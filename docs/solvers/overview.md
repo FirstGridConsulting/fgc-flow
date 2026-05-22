@@ -1,6 +1,6 @@
 # Solver Overview
 
-GDM-OPF provides three power flow solvers, each suited to different analysis needs. All operate on `DistributionSystem` objects from grid-data-models and share the same Y-bus construction infrastructure.
+FGC-Flow provides three power flow solvers, each suited to different analysis needs. All operate on `DistributionSystem` objects from grid-data-models and share the same Y-bus construction infrastructure.
 
 ## Solver Comparison
 

@@ -1,6 +1,6 @@
 # Command-Line Interface
 
-GDM-OPF includes a modern CLI built with [Typer](https://typer.tiangolo.com/) and [Rich](https://rich.readthedocs.io/) for colorful, readable terminal output.
+FGC-Flow includes a modern CLI built with [Typer](https://typer.tiangolo.com/) and [Rich](https://rich.readthedocs.io/) for colorful, readable terminal output.
 
 ## Installation
 

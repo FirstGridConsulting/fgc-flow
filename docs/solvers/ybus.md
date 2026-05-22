@@ -1,6 +1,6 @@
 # Y-Bus Construction
 
-The Y-bus (admittance matrix) is the shared foundation for all GDM-OPF solvers. It encodes the network topology, branch impedances, and transformer models in a single complex-valued matrix.
+The Y-bus (admittance matrix) is the shared foundation for all FGC-Flow solvers. It encodes the network topology, branch impedances, and transformer models in a single complex-valued matrix.
 
 ## Theory
 
