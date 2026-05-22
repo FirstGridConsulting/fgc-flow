@@ -49,7 +49,7 @@ def test_mcp_documentation_tools_smoke():
         )
     )
     assert page["path"] == "intro.md"
-    assert "GDM-OPF" in page["content"]
+    assert "FGC-Flow" in page["content"]
 
 
 def test_mcp_api_reference_tools_smoke():
