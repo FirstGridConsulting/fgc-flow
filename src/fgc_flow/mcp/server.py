@@ -251,8 +251,8 @@ def _serialize_lindistflow_result(result: Any, include_details: bool) -> dict[st
 
 
 @app.list_tools()
-    async def list_tools() -> list[Tool]:
-        """List available FGC-Flow MCP tools."""
+async def list_tools() -> list[Tool]:
+    """List available FGC-Flow MCP tools."""
     return [
         # Solver and matrix tools
         Tool(
